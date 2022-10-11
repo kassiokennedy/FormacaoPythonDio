@@ -6,16 +6,16 @@ IMPORTANTE: As funções "input" e "print" são acessíveis nativamente em Pytho
    impressão dos dados de saída.
 - "dict{}": dicionários possuem uma relação de chave - valor. Para cada chave haverá um valor.
 '''
-
-
-month = input()
-
 ''' 
 TODO Faça uma relação entre as possíveis entradas e os meses (em inglês).
 TODO Imprima o valor de cada chave em relação as entradas do programa.
 '''
+
+month = int(input())
+
+
 months_dict = {
-    1 : "January",
+    1: "January",
     2: "February",
     3: "March",
     4: "April",
@@ -29,16 +29,8 @@ months_dict = {
     12: "December",
 }
 
-
-def switch(month):
-    return print(months_dict.get(month, "Mes inexistente."))
-
-
-switch(month)
-'''
-for month in months_dict.keys():
+if month in months_dict.keys():
     print(months_dict.get(month))
 else:
-    print("Mes inexistente.")
+    print("Mes inexistente.\n")
 
-'''
