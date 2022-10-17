@@ -26,6 +26,7 @@ https://github.com/eduardo-mior/URI-Online-Judge-Solutions/blob/master/Strings/U
 https://www.life2coding.com/uri-online-judge-solution-1241-fit-or-dont-fit-ii-intermediate-problem/
 
 '''
+'''
 N = int(input())
 
 
@@ -43,7 +44,7 @@ while(N > 0):
 
 
 '''
-https://github.com/pietrosonza/python_dio/blob/main/exercise3_mod1
+# https://github.com/pietrosonza/python_dio/blob/main/exercise3_mod1
 
 n = int(input())
 
@@ -68,4 +69,3 @@ while n > 0:
 
 
     n -= 1
-'''
