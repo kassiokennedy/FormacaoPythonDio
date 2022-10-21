@@ -11,6 +11,19 @@ class Banco:
     def __init__(self):
         pass
     # --------------------------------------------------------
+    def novoUsuario(self):
+        # nome
+        # data de nascimento
+        # cpf
+        # endereço (rua, numero- bairro - cidade/estado
+        pass
+    # --------------------------------------------------------
+    def novaConta(self):
+        # agencia (0001)
+        # numero da conta
+        # usuario
+        pass
+    # --------------------------------------------------------
     def depositar(self):
         global saldo
         global extrato
