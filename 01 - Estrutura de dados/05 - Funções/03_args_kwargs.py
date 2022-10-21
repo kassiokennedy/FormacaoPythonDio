@@ -6,6 +6,7 @@ def exibir_poema(data_extenso, *args, **kwargs):
 
 
 exibir_poema(
+    "Qinta-feira, 20 de outubro de 2022",
     "Zen of Python",
     "Beautiful is better than ugly.",
     "Explicit is better than implicit.",

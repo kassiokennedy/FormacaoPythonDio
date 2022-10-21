@@ -1,4 +1,4 @@
-frutas = ["laranja", "maca", "uva"]
+frutas = ["laranja", "maca", "uva"]  # forma mais comum de declarar listas
 print(frutas)
 
 frutas = []
