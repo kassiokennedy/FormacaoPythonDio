@@ -46,15 +46,68 @@ for i in range(C):
  SAÍDA
  Para cada caso de teste imprima o número de garrafas que o cliente terá no 
  segundo dia, se aproveitar ao máximo a oferta.
+ https://urisolutions.blogspot.com/2021/02/uri-problem-2896-solution-enjoy-offer.html
+ 
+'''
 '''
 
-T = int(input("Digite o valor de T:"))
+T = int(input())
 
-for i in range(T):
-    N = int(input("Digite o valor de N:"))
+S = 0
+while T > 0:
+    N, K = map(int, input().split())
 
-    K = int(input("Digite o valor de K:"))
+    if N >= K:
+        S = S + N / K
+        S = S + N % K
+    else:
+        S = N
+    print(int(S))
+    S = 0
+    T -= 1
+'''
 
-    K = 1 if K < 1 else print(int((N % K) + (N / K)))
+# --------------------------------------------------------------------------------
+'''
+
+https://github.com/MayaraMachado/URI---Python-3/blob/master/animal%20-%201049.py
+'''
 
 
+''' 
+IMPORTANTE: As funções "input" e "print" são acessíveis nativamente em Python, onde:  
+ - "input": função que permite a leitura de uma entrada do usuário. Lembre-se que, em alguns 
+   casos, é necessário converter/tratar os dados de entrada; 
+ - "print": função que imprime um texto enviado em seu parâmetro, a qual é essencial para a 
+   impressão dos dados de saída. 
+   http://muitomaiscodigoss.blogspot.com/2018/09/uri-problema-1049-animal-em-python.html
+'''
+x = input()
+y = input()
+z = input()
+
+if x == 'vertebrado' and y == 'ave' and z == 'carnivoro':
+    a = 'aguia'
+
+if x == 'vertebrado' and y == 'ave' and z == 'onivoro':
+    a = 'pomba'
+
+if x == 'vertebrado' and y == 'mamifero' and z == 'onivoro':
+    a = 'homem'
+
+if x == 'vertebrado' and y == 'mamifero' and z == 'herbivoro':
+    a = 'vaca'
+
+if x == 'invertebrado' and y == 'inseto' and z == 'hematofago':
+    a = 'pulga'
+
+if x == 'invertebrado' and y == 'inseto' and z == 'herbivoro':
+    a = 'lagarta'
+
+if x == 'invertebrado' and y == 'anelideo' and z == 'hematofago':
+    a = 'sanguessuga'
+
+if x == 'invertebrado' and y == 'anelideo' and z == 'onivoro':
+    a = 'minhoca'
+
+print(a)
