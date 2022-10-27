@@ -2,12 +2,14 @@
 https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/Ef-dMEJYq9BPotZQso7LUCwBJd7gDqCC2SYlUYx0ayrGNQ?rtime=6BGAHCWu2kg
 https://github.com/digitalinnovationone/trilha-python-dio/blob/02_programacao_orientada_objetos/02%20-%20Programa%C3%A7%C3%A3o%20Orientada%20a%20Objetos/10%20-%20desafio/desafio_v2.py
 https://www.udemy.com/course/python-3-do-zero-ao-avancado/learn/lecture/15120778#overview
+https://www.udemy.com/course/python-3-do-zero-ao-avancado/learn/lecture/15099776#overview
 '''
 import random
 
 # Variavel global
 saldo = 1000
 i = 0
+a = 0
 extrato = ''
 
 # --------------------------------------------------------
@@ -34,26 +36,42 @@ class Cliente:
         self.clientes = {}
 
     def novaConta(self, nome, username, agencia, conta):
+        global a
         # clientes = {nome: '', agencia: '', conta: ''}
+        print("Informe os dados da conta.")
         nome = input("Nome de usuário: ")
-        agencia = int(1)
+        agencia = 1
         conta = random.randint(0000,9999)
 
-        if 'clientes' not in self.clientes:
-            self.clientes['clientes'] = {nome: '', agencia: '', conta: ''}
+        if a not in self.clientes:
+            self.clientes[a] = {'Nome':nome,'Ag': agencia ,'CC': conta}
+            a += 1
         else:
-            self.clientes['clientes'].update({nome: '', agencia: '', conta: ''})
+            self.clientes[a].update({'Nome':nome,'Ag': agencia ,'CC': conta})
 
         return print(f'''
-        Usuario: {nome}
-        Agencia: {agencia}
+        Usuário: {nome}
+        Agência: {agencia}
         Conta:   {conta}
         ''')
 
     def listaContas(self):
-        for nome in self.clientes['clientes'].items():
-            print(self.clientes)
-
+        print("Lista de conta.")
+        '''
+        x = self.clientes.items()
+        print(x)
+        '''
+        a = 0
+        for chave, valor in self.clientes.items():
+            '''
+            for k, v in self.clientes.items():
+                print(k, v)2
+                a += 1
+            '''
+            print(f'Cliente: {chave}')
+            for dados1, dados2 in valor.items():
+                print(f'''      {dados1}:{dados2}''')
+            a += 1
 
     def inserirCliente(self, nome, username):
         nome = input("Nome o nome completo: ")
@@ -66,7 +84,7 @@ class Cliente:
 
     def listaClientes(self):
         for nome, username in self.dados['clientes'].items():
-            print(nome, username)
+            print(f'Nome: {nome}; Usuário: {username}')
 
 
 # --------------------------------------------------------
