@@ -1,10 +1,7 @@
 '''
 https://academiapme-my.sharepoint.com/:p:/g/personal/kawan_dio_me/Ef-dMEJYq9BPotZQso7LUCwBJd7gDqCC2SYlUYx0ayrGNQ?rtime=6BGAHCWu2kg
-
 https://github.com/digitalinnovationone/trilha-python-dio/blob/02_programacao_orientada_objetos/02%20-%20Programa%C3%A7%C3%A3o%20Orientada%20a%20Objetos/10%20-%20desafio/desafio_v2.py
-
 https://www.udemy.com/course/python-3-do-zero-ao-avancado/learn/lecture/15120778#overview
-
 '''
 import random
 
@@ -27,39 +24,49 @@ class Pessoa:
 
 # --------------------------------------------------------
 # --------------------------------------------------------
+
 class Cliente:
     '''
     https://github.com/kassiokennedy/cursoPython/blob/7e2536b6f0d06b4133f12adf4bc7c7b9eda16a2d/cursoudemy/Secao04/encapsulamento.py
     '''
     def __init__(self):
         self.dados = {}
+        self.clientes = {}
 
-
-    def novaConta(self):
-
+    def novaConta(self, nome, username, agencia, conta):
+        # clientes = {nome: '', agencia: '', conta: ''}
         nome = input("Nome de usuário: ")
-        usuario = [nome]
-
         agencia = int(1)
         conta = random.randint(0000,9999)
 
-        contas.append(novaConta)
+        if 'clientes' not in self.clientes:
+            self.clientes['clientes'] = {nome: '', agencia: '', conta: ''}
+        else:
+            self.clientes['clientes'].update({nome: '', agencia: '', conta: ''})
+
         return print(f'''
-        Usuario: {usuario}
+        Usuario: {nome}
         Agencia: {agencia}
         Conta:   {conta}
         ''')
-    def inserirCliente(self, nome,id):
-        nome = input("Nome de usuário: ")
-        id = input("Nome de usuário: ")
+
+    def listaContas(self):
+        for nome in self.clientes['clientes'].items():
+            print(self.clientes)
+
+
+    def inserirCliente(self, nome, username):
+        nome = input("Nome o nome completo: ")
+        username = input("Digite o nome de usuario: ")
+
         if 'clientes' not in self.dados:
-            self.dados['clientes'] = {id: nome}
+            self.dados['clientes'] = {nome: username}
         else:
-            self.dados['clientes'].update({id: nome})
+            self.dados['clientes'].update({nome: username})
 
     def listaClientes(self):
-        for id, nome in self.dados['clientes'].items():
-            print(id, nome)
+        for nome, username in self.dados['clientes'].items():
+            print(nome, username)
 
 
 # --------------------------------------------------------
@@ -69,16 +76,12 @@ class Banco:
     def __init__(self):
         pass
 
-    # --------------------------------------------------------
     def lista(self):
-
         if not Cliente.novaConta:
             print("Nada aqui.")
         else:
             print("erro")
 
-
-    # --------------------------------------------------------
     def depositar(self):
         global saldo
         global extrato
@@ -90,7 +93,6 @@ class Banco:
         extrato += f'\nDepósito: {deposito:.2f} R$'
         return print(f'Seu saldo é de {saldo:.2f} R$\n')
 
-    # -------------------------------------------------------
     def sacar(self):
         global saldo # chamada da variavel global
         global i
@@ -112,7 +114,7 @@ class Banco:
                 print("\nSeulimite é de ate 3 saques diários.")
 
         return print(f'\nSeu saldo é de {saldo:.2f} R$\n')
-    # -------------------------------------------------------
+
     def extrato(self):
         if not extrato:
             print(f'''
@@ -144,28 +146,38 @@ if __name__ == '__main__':
         operacao = int(input(
             f'''
 -------------------- Menu ------------------------------ 
-        1 - Criar usuári@
-        2 - Criar conta
+        1 - Nov@ usuári@
+        2 - Nova conta
         3 - Saque
         4 - Depósito
         5 - Extrato
         6 - Lista de contas
-        7 - Sair 
+        7 - Lista de clientes
+        8 - Sair 
 --------------------------------------------------------
 Escolha uma operação:'''))
         if operacao == 1:
-            print(pessoa.novoUsuario())
-        elif operacao == 2:
             print(cliente.inserirCliente(any, any))
+
+        elif operacao == 2:
+            print(cliente.novaConta(any, any, any, any))
+
         elif operacao == 3:
             print(banco.depositar())
+
         elif operacao == 4:
             print(banco.sacar())
+
         elif operacao == 5:
             print(banco.extrato())
+
         elif operacao == 6:
-            print(cliente.listaClientes())
+            print(cliente.listaContas())
+
         elif operacao == 7:
+            print(cliente.listaClientes())
+
+        elif operacao == 8:
             print("\nFechando o programa.")
             break
         i += 1
