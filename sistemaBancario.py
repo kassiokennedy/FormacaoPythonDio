@@ -56,7 +56,8 @@ class Cliente:
         ''')
 
     def listaContas(self):
-        print("Lista de conta.")
+
+        print('\nLista de contas:')
         '''
         x = self.clientes.items()
         print(x)
@@ -83,8 +84,9 @@ class Cliente:
             self.dados['clientes'].update({nome: username})
 
     def listaClientes(self):
+        print('\nLista de clientes:')
         for nome, username in self.dados['clientes'].items():
-            print(f'Nome: {nome}; Usuário: {username}')
+            print(f'    Nome: {nome}; Usuário: {username}')
 
 
 # --------------------------------------------------------
